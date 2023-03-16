@@ -1,0 +1,60 @@
+body {
+    background: url("../img/wall.jpg") no-repeat center top fixed;
+    font-family: Georgia, times, serif;
+}
+
+header {
+    height: 120px;
+    background: rgba(200, 210, 250, 0.5);
+}
+
+h1 {
+    width: 940px;
+    height: 40px;
+    margin: 0px;
+    padding: 10px;
+    color: rgb(70, 70, 70);
+}
+
+a {
+    color: rgb(40, 40, 40);
+}
+
+ul.menu {
+    margin: 15px;
+    padding: 4px;
+    text-align: right;
+}
+
+ul.menu li {
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+.content {
+    background: rgba(200, 200, 200, 0.5);
+    min-height: 700px;
+}
+
+footer {
+    height: 50px;
+    background: rgba(200, 210, 250, 0.5);
+    text-align: right;
+}
+
+.pic {
+    margin: 10px;
+	float: left;
+	padding: 0px;
+}
+
+.about {
+    margin: 10px;
+	float: center;
+	min-width: 200px;
+	padding: 50px;
+	text-align: justify;
+}
+
+

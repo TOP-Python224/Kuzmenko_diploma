@@ -1,0 +1,47 @@
+{% load static %}
+
+<html>
+ <head>
+   <title>Store</title>
+   <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{% static 'css/main_style.css' %}" rel="stylesheet">
+ </head>
+<body>
+  <header>
+    <h1 style="font-weight:bolder">STORE</h1>
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="{% url 'products:main_page' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Главная</a>
+        </li>
+        <li>
+          <a href="{% url 'products:catalog' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Каталог</a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Вход</a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Корзина</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr>
+
+  <div class="content">
+  {% block content %}{% endblock content %}
+  </div>
+
+  <hr>
+
+  <footer>
+    <ul class="menu">
+      <li><a href="{% url 'products:about_us' %}">О нас</a></li>
+      <li><a href="#">Контакты</a></li>
+      <li>&copy; 2023 Python-project</li>
+    </ul>
+
+  </footer>
+</body>
+</html>
