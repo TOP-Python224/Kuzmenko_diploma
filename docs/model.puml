@@ -1,0 +1,75 @@
+@startuml
+
+'тёмная тема для диаграммы
+!theme monokai from \style
+hide class empty members
+hide abstract empty members
+
+
+class Catalog {
+    {field}<&key> <b>id</b>: tinyint unsigned
+    {field}<b>name</b>: varchar(50)
+}
+
+
+class Product {
+    {field}<&key> <b>id</b>: smallint unsigned
+    {field}<b>catalog_id</b>: tinyint unsigned
+    {field}<b>name</b>: varchar(50)
+    {field}<b>description</b>: longtext
+    {field}<b>price</b>: decimal(6,2)
+    {field}<b>image</b>: varchar(100)
+}
+
+
+class BasketItem {
+    {field}<&key> <b>product_id</b>: bigint unsigned
+    {field}<&key> <b>basket_id</b>: int unsigned
+    {field}<b>discount</b>: decimal(2,2)
+    {field}<b>quantity</b>: tinyint unsigned
+}
+
+
+class Basket {
+    {field}<&key> <b>id</b>: int unsigned
+    {field}<b>created</b>: datetime
+    {field}<b>total_discount</b>: decimal(2,2)
+}
+
+
+class Order {
+    {field}<&key> <b>user_id</b>: int unsigned
+    {field}<&key> <b>basket_id</b>: int unsigned
+    {field}<b>token</b>: char(10)
+    {field}<b>status</b>: varchar(10)
+    {field}<b>created</b>: datetime
+}
+
+
+class OrderHistory {
+    {field}<&key> <b>order_id</b>: int unsigned
+    {field}<&key> <b>updated</b>: datetime
+    {field}<b>message</b>: longtext
+}
+
+
+abstract class AbstractUser
+
+class User {
+    {field}<b>phone</b>: char(18)
+}
+
+
+AbstractUser <|-- User
+
+Catalog "1" -- "*" Product
+Product "1" -- "*" BasketItem
+
+Basket "1" -- "*" BasketItem
+Basket "1" -- "1" Order
+
+Order "1" -- "*" OrderHistory
+User "1" -- "*" Order
+
+
+@enduml
