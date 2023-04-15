@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Каталоги продуктов</p>
+ <ul>
+     {% for catalog in catalogs %}
+      <li><a href="{% url 'products:catalog' catalog.id %}">{{ catalog }}</a></li>
+     {% empty %}
+      <li>No catalogs have been added yet.</li>
+     {% endfor %}
+ </ul>
+
+{% endblock content %}
+

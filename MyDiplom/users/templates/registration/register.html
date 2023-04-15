@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+<!--    {% for f in form %}-->
+<!--    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>-->
+<!--    <div class="form-error">{{ f.errors }}</div>-->
+<!--    {% endfor %}-->
+
+    <button name="submit" class="btn btn-warning">Register</button>
+    <input type="hidden" name="next"
+        value="{% url 'products:main_page' %}" />
+</form>
+
+{% endblock content %}
+
+<!--action="{% url 'users:register' %}"-->
