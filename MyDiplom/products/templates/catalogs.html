@@ -1,14 +1,20 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<p>Каталоги продуктов</p>
- <ul>
-     {% for catalog in catalogs %}
-      <li><a href="{% url 'products:catalog' catalog.id %}">{{ catalog }}</a></li>
-     {% empty %}
-      <li>No catalogs have been added yet.</li>
-     {% endfor %}
- </ul>
+
+<div class="row justify-content-center">
+    <h3>Каталоги продуктов:</h3>
+    <ul>
+        {% for catalog in object_list %}
+        <li><a href="{% url 'products:products' catalog.id %}">{{ catalog }}
+<!--            <img class="calalog" src="{% static 'img/ball.png' %}" alt="альтернативный текст">-->
+            </a>
+        </li>
+        {% empty %}
+        <li>No catalogs have been added yet.</li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock content %}
 

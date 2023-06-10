@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-    <h3>Корзина ({{ user.first_name }} {{ user.last_name }})</h3>
-<!--    <p>{% for b in basket %}</p>-->
-<!--    <p>{{ b.product.name }}</p>-->
-<!--    {% endfor %}-->
-
+<div class="row justify-content-center">
+    {% include 'baskets.html' %}
 </div>
 {% endblock content %}
