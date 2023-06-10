@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+      <div class="row justify-content-center">
+
+          	<h3 class="details">CREDIT CARD DETAILS</h3>
+		<div class="card">
+
+			<form action="#" method="post">
+				<table> <!--frame="border" rules="all"-->
+					<tr>
+						<td>
+							<label for="cardnumber">Card Number</label>
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<input type="text" id="cardnumber" name="usercard" placeholder="1234 5678 9012 3456" />
+						</td>
+						<!--<td></td>-->
+						<!--<td></td>-->
+					</tr>
+					<tr>
+						<td>
+							<label for="nameoncard">Name On Card</label>
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<input type="text" id="nameoncard" name="username" placeholder="Name Surname" />
+						</td>
+						<!--<td></td>-->
+						<!--<td></td>-->
+					</tr>
+					<tr>
+						<td><label>Expiry Date</label></td>
+						<td></td>
+						<td><label for="cvv">CVV/CVN</label></td>
+					</tr>
+					<tr>
+						<td>
+							<select id="month" name="month" placeholder="02">
+							<option>01</option>
+							<option selected>02</option>
+							<option>03</option>
+							<option>04</option>
+							<option>05</option>
+							<option>06</option>
+							<option>07</option>
+							<option>08</option>
+							<option>09</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+						</td>
+						<td>
+							<select id="year" name="year" placeholder="2017">
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>
+							<option>2025</option>
+
+						</td>
+						<td>
+							<input type="text" id="cvv" placeholder="***" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+            <a class="btn btn-success btn-lg float-right" href="{% url 'orders:success' %}">
+                Оплатить
+            </a>
+      </div>
+{% endblock content %}
