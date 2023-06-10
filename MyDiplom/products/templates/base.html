@@ -21,7 +21,7 @@
         </li>
         {% if user.is_authenticated %}
         <li>
-          <a href="{% url 'users:logout' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Log out, {{ user.username }}</a>
+          <a href="{% url 'users:logout' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Выйти</a>
         </li>
         {% else %}
         <li>
@@ -30,8 +30,16 @@
         {% endif %}
          {% if user.is_authenticated %}
         <li>
-          <a href="{% url 'products:basket' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Корзина</a>
-        </li>
+          <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a>
+                <a class="dropdown-item" href="{% url 'products:basket' %}">Корзина {% if baskets %} ({{ baskets.total_quantity }}) {% else %} {% endif %}</a>
+                <a class="dropdown-item" href="{% url 'orders:orders' %}">Заказы</a>
+              </div>
+          </div>
         {% endif %}
       </ul>
     </nav>
@@ -49,7 +57,7 @@
     <ul class="menu">
       <li><a href="{% url 'products:about_us' %}">О нас</a></li>
       <li><a href="{% url 'products:contacts' %}">Контакты</a></li>
-      <li>&copy; 2023 Python-project</li>
+      <li>&copy; 2023 Python-project, Kuzmenko D.V.</li>
     </ul>
 
   </footer>

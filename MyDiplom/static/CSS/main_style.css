@@ -21,6 +21,13 @@ a {
     color: rgb(40, 40, 40);
 }
 
+.slogan {
+    font-family: Courier New, Courier, monospace;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+
+}
+
 ul.menu {
     margin: 15px;
     padding: 4px;
@@ -58,10 +65,17 @@ footer {
 	text-align: justify;
 }
 
+.picture {
+    border-radius: 40px;
+    width: 200px;
+    height: 300px;
+}
 
-
-
-
+.catalog {
+    border-radius: 40px;
+    width: 100px;
+    height: 100px;
+}
 
 
 
